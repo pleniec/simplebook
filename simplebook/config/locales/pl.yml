@@ -1,0 +1,37 @@
+pl:
+  activerecord:
+    errors:
+      messages:
+        accepted: "musi być zaakceptowany"
+        invalid: "jest nieprawidłowy"
+        confirmation: "nie jest zgodny z potwierdzeniem"
+        exclusion: "jest zarezerwowany"
+        inclusion: "nie zawiera się w liście dostępnych wartości"
+        too_short: "jest za krótki (minimum %{count} znaków)"
+        too_long: "jest za długi (minimum %{count} znaków)"
+        wrong_length: "jest złej długości (prawidłowa długość wynosi %{count} znaków)"
+        not_a_number: "nie jest numerem"
+        odd: "musi być nieparzysty"
+        even: "musi być parzysty"
+        greater_than: "musi być większy od %{count}"
+        greater_than_or_equal_to: "musi być większy lub równy %{count}"
+        equal_to: "musi być równy %{count}"
+        less_than: "musi być mniejszy od %{count}"
+        less_than_or_equal_to: "musi być mniejszy lub równy %{count}"
+        blank: "nie może być pusty"
+        taken: "juz jest zajęty"
+  api:
+    v1:
+      users:
+        invalid_credentials: "Nieprawidłowy email lub hasło"
+  index:
+    log_in: "Zaloguj się"
+    password: "Hasło"
+    repeat_password: "Powtórz hasło"
+    registration: "Rejestracja"
+    invalid_email: "Nieprawidłowy email"
+    email: "Email"
+    first_name: "Imię"
+    last_name: "Nazwisko"
+    invalid_password: "Nieprawidłowe hasło"
+    passwords_are_not_equal: "Hasła nie są takie same"

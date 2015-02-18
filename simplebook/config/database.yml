@@ -1,0 +1,19 @@
+development:
+  adapter: postgresql
+  host: localhost
+  username: simplebook
+  password: simplebook
+
+
+test:
+  adapter: postgresql
+  host: localhost
+  username: simplebook
+  password: simplebook
+
+
+production:
+  adapter: postgresql
+  host: localhost
+  username: simplebook
+  password: simplebook

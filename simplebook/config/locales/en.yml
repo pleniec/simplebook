@@ -1,0 +1,16 @@
+en:
+  api:
+    v1:
+      users:
+        invalid_credentials: "Invalid credentials"
+  index:
+    log_in: "Log in"
+    password: "Password"
+    repeat_password: "Repeat password"
+    registration: "Registration"
+    invalid_email: "Invalid email"
+    email: "Email"
+    first_name: "First name"
+    last_name: "Last name"
+    invalid_password: "Invalid password"
+    passwords_are_not_equal: "Passwords are not equal"

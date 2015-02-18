@@ -1,0 +1,104 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<div class="row">
+			<div class="col-lg-1">
+			</div>
+			<div class="col-lg-5">
+				<h1>simplebook</h1>
+			</div>
+			<div class="col-lg-6">
+				<div class="row">
+					<div class="form-inline" style="margin-top: 20px;">
+						<div class="form-group">
+							<input ng-model="loginData.email" class="form-control"
+								placeholder="<%= t 'index.email' %>" enterdown="login()"/>
+						</div>
+						<div class="form-group">
+							<input type="password" ng-model="loginData.password" class="form-control"
+								placeholder="<%= t 'index.password' %>" enterdown="login()"/>
+						</div>
+						<div class="form-group">
+							<button ng-click="login()" class="btn btn-default"><%= t 'index.log_in' %></button>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<p ng-show="loginError" class="text-danger">
+						<strong>{{ loginError }}</strong>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-lg-7">
+				<a class="thumbnail">
+					<img src="/images/people.jpg"/>
+				</a>
+			</div>
+			<%= angular_form 'registrationForm', 'registrationData', class: 'col-lg-5' do |f| %>
+				<h1><%= t 'index.registration' %></h1>
+				<ul ng-repeat="(field, errors) in validationErrors" class="text-danger">
+					<li ng-repeat="error in errors">
+						{{ field }} {{ error }}
+					</li>
+				</ul>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-lg-4">
+							<%= f.validation_error 'firstName', t('index.invalid_first_name') %>
+						</div>
+						<div class="col-lg-5">
+							<%= f.validation_error 'lastName', t('index.invalid_last_name') %>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-4">
+							<%= f.text_field 'firstName', placeholder: t('index.first_name'),
+								'ng-minlength' => 3, 'ng-maxlength' => 20, required: :required %>
+						</div>
+						<div class="col-lg-5">
+							<%= f.text_field 'lastName', placeholder: t('index.last_name'),
+								'ng-minlength' => 3, 'ng-maxlength' => 20, required: 'required' %>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-lg-9">
+							<%= f.validation_error 'email', t('index.invalid_email') %>
+							<%= f.email_field 'email', placeholder: t('index.email'),
+								required: :required %>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-lg-9">
+							<%= f.validation_error 'password', t('index.invalid_password') %>
+							<%= f.password_field 'password', placeholder: t('index.password'),
+								'ng-minlength' => 8, 'ng-maxlength' => 128, required: 'required',
+								'ng-change' => 'checkPasswords()' %>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-lg-9">
+							<%= f.validation_error 'passwordConfirmation', t('index.passwords_are_not_equal') %>
+							<%= f.password_field 'passwordConfirmation', placeholder: t('index.repeat_password'),
+								'ng-change' => 'checkPasswords()' %>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<button ng-disabled="registrationForm.$invalid || registrationForm.$pristine"
+						ng-click="registerUser()" class="btn btn-primary">
+						<%= t 'index.registration' %>
+					</button>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
