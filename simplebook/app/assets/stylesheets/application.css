@@ -1,1 +1,26 @@
 //= require bootstrap.min
+
+#topBar {
+	position: fixed;
+	height: 60px;
+	width: 100%;
+	z-index: 100;
+}
+
+#topBarSpace {
+	height: 60px;
+}
+
+#chatBar {
+	width: 16.66666667%;
+	position: fixed;
+	height: 100%;
+	right: 0px;
+	top: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.localeSelectLink {
+	cursor: pointer;
+}

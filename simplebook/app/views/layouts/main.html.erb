@@ -1,0 +1,25 @@
+<div id="topBar" ng-controller="TopBarController">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<div class="row">
+				<div class="col-lg-10">
+					<a link-to="/home" class="btn btn-default">Home</a>
+					<a link-to="/find_friends" class="btn btn-default">Find friends</a>
+					<button ng-click="logout()" class="btn btn-default">Log out</button>
+					<%= render 'partials/locale_select' %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="topBarSpace"></div>
+<div id="chatBar">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			CHAT CHAT TODO
+		</div>
+	</div>
+</div>
+<div class="col-lg-10">
+	<%= yield %>
+</div>

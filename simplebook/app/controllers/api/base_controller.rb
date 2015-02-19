@@ -1,5 +1,5 @@
 module Api
-	class ApiController < ApplicationController
+	class BaseController < ApplicationController
 
 		rescue_from ActionController::ParameterMissing do |exception|
 			render json: {exception: exception.message}, status: 500

@@ -1,15 +1,16 @@
 class ViewsController < ApplicationController
+	include TokenAuthentication
+	skip_before_action :authenticate, only: [:index]
 
-	before_action except: [:index] do
-		unless User.valid_token?(params[:token])
-			render nothing: true, status: :unauthorized
-		end
-	end
+	layout 'main', except: [:index]
 
 	def index
 	end
 
 	def home
+	end
+
+	def find_friends
 	end
 	
 end

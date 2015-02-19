@@ -1,0 +1,14 @@
+<div class="btn-group pull-right" dropdown>
+	<button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle>
+		Languages
+	</button>
+  <ul class="dropdown-menu" role="menu">
+		<%= I18n.available_locales.each do |locale| %>
+			<li>
+				<a locale-select="<%= locale.to_s %>" class="localeSelectLink">
+					<%= t("views.partials.locale_select.#{locale}") %>
+				</a>
+			</li>
+		<% end %>
+  </ul>
+</div>

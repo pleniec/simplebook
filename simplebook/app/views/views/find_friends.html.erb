@@ -1,0 +1,41 @@
+<div class="row">
+	<div class="col-lg-12">
+		<div class="col-lg-3">
+			<label>First name</label>
+			<input ng-model="findFriendsTableFilter.firstName" class="form-control"/>
+		</div>
+		<div class="col-lg-3">
+			<label>Last name</label>
+			<input ng-model="findFriendsTableFilter.lastName" class="form-control"/>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-2 col-lg-offset-1">
+		<div class="checkbox">
+	    <label>
+	      <input ng-model="findFriendsTableFilter.showFriends" type="checkbox"> Show friends
+	    </label>
+	  </div>
+	</div>
+	<div class="col-lg-2">
+		<div class="checkbox">
+	    <label>
+	      <input ng-model="findFriendsTableFilter.showInvited" type="checkbox"> Show invited
+	    </label>
+	  </div>
+	</div>
+</div>
+<table ng-table="findFriendsTable" class="table">
+  <tr ng-repeat="user in $data">
+    <td data-title="'First name'">
+      LOL
+    </td>
+    <td data-title="'Last name'">
+    	sOŁEPff
+    </td>
+    <td>
+    	<button class="btn btn-primary">Invite</button>
+    </td>
+  </tr>
+</table>

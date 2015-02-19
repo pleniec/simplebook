@@ -1,6 +1,8 @@
 module Api
 	module V1
-		class UsersController < Api::ApiController
+		class UsersController < Api::BaseController
+			include TokenAuthentication
+			skip_before_action :authenticate, except: [:logout]
 
 			def register
 				user = User.new(register_params)
@@ -18,6 +20,12 @@ module Api
 				else
 					render json: {error: t('api.v1.users.invalid_credentials')}, status: :unprocessable_entity
 				end
+			end
+
+			def logout
+				current_user.token = nil
+				current_user.save!
+				render nothing: true, status: :ok
 			end
 
 			private
