@@ -4,7 +4,11 @@
 	app.service('utilsService', function() {
 		this.convertToUnderscore = function(string) {
 			return string.replace(/([A-Z])/g, function($1) { return "_" + $1.toLowerCase(); });
-		}
+		};
+
+		this.convertToCamelCase = function(string) {
+			return string.replace(/\W+(.)/g, function (x, chr) { return chr.toUpperCase(); });
+		};
 
 		this.convertToRailsParams = function(params) {
 			var railsParams = {};
@@ -13,12 +17,13 @@
 			}
 			return railsParams;
 		};
+
+		this.convertToAngularParams = function(params) {
+			var angularParams = {};
+			for(var key in params) {
+				angularParams[this.convertToCamelCase(key)] = params[key];
+			}
+			return angularParams;
+		}
 	});
 })();
-
-
-/*
-String.prototype.toUnderscore = function(){
-	return this.replace(/([A-Z])/g, function($1){return "_"+$1.toLowerCase();});
-};
-*/

@@ -4,7 +4,9 @@ module Api
 			include TokenAuthentication
 
 			def potential_friends
-				render json: []
+				total = User.where.not(id: current_user.id).count
+				result = User.where.not(id: current_user.id).offset(params[:offset]).limit(params[:limit])
+				render json: {total: total, result: result.as_json(only: [:id, :first_name, :last_name])}
 			end
 
 		end

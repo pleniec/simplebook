@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   		end
 
       scope :friends do
-        post '/potential_friends', to: 'friends#potential_friends'
+        get '/potential_friends', to: 'friends#potential_friends'
       end
 
   	end

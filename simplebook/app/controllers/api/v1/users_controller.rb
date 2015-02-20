@@ -16,7 +16,7 @@ module Api
 			def login
 				token = User.login(params[:email], params[:password])
 				if token
-					render json: {token: token}, status: :ok
+					render json: {token: token}
 				else
 					render json: {error: t('api.v1.users.invalid_credentials')}, status: :unprocessable_entity
 				end
@@ -25,7 +25,7 @@ module Api
 			def logout
 				current_user.token = nil
 				current_user.save!
-				render nothing: true, status: :ok
+				render nothing: true
 			end
 
 			private

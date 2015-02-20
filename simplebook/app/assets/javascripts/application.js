@@ -9,10 +9,16 @@
 //= require providers/tokenProvider
 //= require providers/localeProvider
 
-//= require services/ajaxService
+//= require services/communication/ajax/baseAjaxService
+//= require services/communication/ajax/authenticatedAjaxService
+//= require services/communication/ajax/localizedAjaxService
+//= require services/communication/ajax/ajaxService
 //= require services/utilsService
 //= require services/locationService
 //= require services/usersService
+//= require services/friendsService
+
+//= require filters/humanize
 
 //= require directives/enterdown
 //= require directives/linkTo
